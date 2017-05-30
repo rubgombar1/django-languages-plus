@@ -9,6 +9,8 @@ def associate_countries_and_languages():
         langs = ''
         try:
             langs = country.languages.strip(',')
+        except AttributeError:
+            pass
         if langs:
             codes = langs.split(",")
             for code in codes:
